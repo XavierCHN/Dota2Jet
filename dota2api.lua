@@ -86,11 +86,11 @@ CDOTA_ItemSpawner = {}
 CDOTA_Item_Lua = {}
 ---@class CDOTA_Modifier_Lua
 CDOTA_Modifier_Lua = {}
----@class CDOTA_Modifier_Lua_Horizontal_Motion
+---@class CDOTA_Modifier_Lua_Horizontal_Motion:CDOTA_Modifier_Lua
 CDOTA_Modifier_Lua_Horizontal_Motion = {}
----@class CDOTA_Modifier_Lua_Motion_Both
+---@class CDOTA_Modifier_Lua_Motion_Both:CDOTA_Modifier_Lua_Motion_Both
 CDOTA_Modifier_Lua_Motion_Both = {}
----@class CDOTA_Modifier_Lua_Vertical_Motion
+---@class CDOTA_Modifier_Lua_Vertical_Motion:CDOTA_Modifier_Lua_Vertical_Motion
 CDOTA_Modifier_Lua_Vertical_Motion = {}
 ---@class CDebugOverlayScriptHelper
 CDebugOverlayScriptHelper = {}
