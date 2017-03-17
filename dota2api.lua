@@ -140,9 +140,6 @@ GlobalSys = {}
 GridNav = {}
 ---@class ProjectileManager
 ProjectileManager = {}
-
-
----Global accessors
 ---@class Entities:CEntities
 Entities = {}
 ---@class PlayerResource:CDOTA_PlayerResource
