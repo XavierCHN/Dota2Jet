@@ -18,9 +18,7 @@ require "dkjson"
 
 local file = io.open("api_string.txt","r")
 local s = file:read()
--- print(tostring(s))
 local AllAPIs = json.decode(s)
--- print(t)
 
 for _, data in pairs(AllAPIs) do
   local template = group:append("template")
@@ -34,7 +32,7 @@ for _, data in pairs(AllAPIs) do
     local def = template:append("variable")
     def.name = var.paramName
     def.expression = ""
-    def.defaultValue = var.paramName
+    def.defaultValue = "&quot;" .. var.paramName .. "&quot;"
     def.alwaysStopAt= "true"
   end
 
@@ -44,4 +42,4 @@ for _, data in pairs(AllAPIs) do
   option.value = "true"
 end
 
-group:save("test/dota2api.xml")
+group:save("../dota2api.xml")
