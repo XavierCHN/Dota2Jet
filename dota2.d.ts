@@ -320,7 +320,7 @@ interface CScriptBindingPR_Players{
 	/**
 	 * Return the name of the hero a player is controlling.
 	 */
-	GetPlayerSelectedHero(iPlayerID: number): number
+	GetPlayerSelectedHero(iPlayerID: number): string
 	/**
 	 * Get the player color.
 	 */
@@ -636,7 +636,7 @@ interface CScriptBindingPR_Abilities {
 	 */
 	PingAbility(nAbilityIndex: number)
 	/**
-	 * Returns the keybind (as a string) for the specified ability.
+	 * Returns the keybind (as a String) for the specified ability.
 	 */
 	GetKeybind(nAbilityEntIndex: number)
 
@@ -738,7 +738,7 @@ interface CScriptBindingPR_Game{
 	 */
 	ScreenXYToWorld(nX: number, nY: number)
 	/**
-	 * Returns the keybind (as a string) for the requested ability slot.
+	 * Returns the keybind (as a String) for the requested ability slot.
 	 */
 	GetKeybindForAbility(iSlot: number)
 	GetNianFightTimeLeft()
@@ -862,7 +862,7 @@ interface $ {
 	/**
 	Log a message
 	*/
-	Msg(... args: any[]): void
+	Msg(...args: any[]): void
 	/**
 	Dispatch an event
 	*/
@@ -894,9 +894,9 @@ interface $ {
 	/**
 	Create a new panel
 	*/
-	CreatePanel(panelType:string, parent:Panel, id:string): Panel
+	CreatePanel(panelType:String, parent:Panel, id:String): Panel
 	/**
-	Localize a string
+	Localize a String
 	*/
 	Localize(js_raw_args_1: js_raw_args): string
 	/**
@@ -918,7 +918,7 @@ interface $ {
 	/**
 	Register a key binding
 	*/
-	RegisterKeyBind(context:Panel, keyName:string, callback:Function)
+	RegisterKeyBind(context:Panel, keyName:String, callback:Function)
 	/**
 	Call a function on each given item
 	*/
@@ -998,26 +998,26 @@ interface Panel {
 	BHasDescendantKeyFocus()
 	BLoadLayout(layoutFilePath: string, boolean_2: boolean,  boolean_3: boolean): boolean
 	BLoadLayoutSnippet(SnippetName: string): boolean
-	BLoadLayoutFromString(cstring_1: string, boolean_2: boolean,  boolean_3: boolean): boolean
-	LoadLayoutFromStringAsync(string_1: string, boolean_2: boolean,  boolean_3: boolean)
-	LoadLayoutAsync(string_1: string, boolean_2: boolean,  boolean_3: boolean)
-	BCreateChildren(string_1: string): boolean
+	BLoadLayoutFromString(cString_1: string, boolean_2: boolean,  boolean_3: boolean): boolean
+	LoadLayoutFromStringAsync(String_1: string, boolean_2: boolean,  boolean_3: boolean)
+	LoadLayoutAsync(String_1: string, boolean_2: boolean,  boolean_3: boolean)
+	BCreateChildren(String_1: string): boolean
 	SetTopOfInputContext(boolean_1: boolean): void
-	SetDialogVariable(string_1: string, string_2: string): void
-	SetDialogVariableInt(string_1: string, number_2: number): void
+	SetDialogVariable(String_1: string, String_2: string): void
+	SetDialogVariableInt(String_1: string, number_2: number): void
 	ScrollToTop()
 	ScrollToBottom()
 	ScrollToLeftEdge()
 	ScrollToRightEdge()
 	ScrollParentToMakePanelFit(unknown_variant_type_1: unknown_variant_type, boolean_2: boolean)
 	BCanSeeInParentScroll(): boolean
-	GetAttributeInt(string_1: string, number_2: number)
-	GetAttributeString(string_1: string, string_2: string)
-	GetAttributeUInt32(string_1: string, number_2: number)
-	SetAttributeInt(string_1: string, number_2: number): void
-	SetAttributeString(string_1: string, string_2: string): void
-	SetAttributeUInt32(string_1: string, number_2: number): void
-	SetInputNamespace(string_1: string): void
+	GetAttributeInt(String_1: string, number_2: number)
+	GetAttributeString(String_1: string, String_2: string)
+	GetAttributeUInt32(String_1: string, number_2: number)
+	SetAttributeInt(String_1: string, number_2: number): void
+	SetAttributeString(String_1: string, String_2: string): void
+	SetAttributeUInt32(String_1: string, number_2: number): void
+	SetInputNamespace(String_1: string): void
 	RegisterForReadyEvents(boolean_1: boolean)
 	BReadyForDisplay(): boolean
 	SetReadyForDisplay(boolean_1: boolean): void
@@ -1044,8 +1044,8 @@ interface CustomUIElement extends Panel {
 }
 
 interface DOTAAbilityImage extends Panel{
-	SetImage(string_1: string): void
-	SetScaling(string_1: string): void
+	SetImage(String_1: string): void
+	SetScaling(String_1: string): void
 	abilityname: string
 	contextEntityIndex: number
 }
