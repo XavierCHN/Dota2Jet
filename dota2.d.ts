@@ -862,7 +862,7 @@ interface $ {
 	/**
 	Log a message
 	*/
-	Msg(... args: any): void
+	Msg(... args: any[]): void
 	/**
 	Dispatch an event
 	*/
