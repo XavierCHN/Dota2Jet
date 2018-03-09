@@ -626,19 +626,19 @@ interface CScriptBindingPR_Abilities {
 	/**
 	 * Attempt to execute the specified ability (Equivalent to clicking the ability in the HUD action bar)
 	 */
-	ExecuteAbility(nAbilityEntIndex: number, nCasterEntIndex: number,  bIsQuickCast: boolean)
+	ExecuteAbility(nAbilityEntIndex: number, nCasterEntIndex: number,  bIsQuickCast: boolean): void
 	/**
 	 * Attempt to double-tap (self-cast) the specified ability (Equivalent to double-clicking the ability in the HUD action bar)
 	 */
-	CreateDoubleTapCastOrder(nAbilityEntIndex: number, nCasterEntIndex: number)
+	CreateDoubleTapCastOrder(nAbilityEntIndex: number, nCasterEntIndex: number): void
 	/**
 	 * Ping the specified ability (Equivalent to alt-clicking the ability in the HUD action bar)
 	 */
-	PingAbility(nAbilityIndex: number)
+	PingAbility(nAbilityIndex: number): void
 	/**
 	 * Returns the keybind (as a String) for the specified ability.
 	 */
-	GetKeybind(nAbilityEntIndex: number)
+	GetKeybind(nAbilityEntIndex: number): string
 
 }
 
@@ -746,7 +746,7 @@ interface CScriptBindingPR_Game{
 	GameStateIs(nState: number): boolean
 	GameStateIsBefore(nState: number): boolean
 	GameStateIsAfter(nState: number): boolean
-	AddCommand(pszCommandName: string, callback: js_value,  pszDescription: string, nFlags: number)
+	AddCommand(pszCommandName: string, callback: Function,  pszDescription: string, nFlags: number)
 	GetLocalPlayerID()
 	/**
 	 * Assign the local player to the specified team
@@ -860,68 +860,68 @@ interface $ {
 	(idSelector: string): Panel
 
 	/**
-	Log a message
-	*/
+	 * Log a message
+	 */
 	Msg(...args: any[]): void
 	/**
-	Dispatch an event
-	*/
+	 * Dispatch an event
+	 */
 	DispatchEvent(eventName: string, eventArgs: any): void
 	/**
-	Dispatch an event to occur later
-	*/
+	 * Dispatch an event to occur later
+	 */
 	DispatchEventAsync(delay:number, eventName: string, eventArgs: any): void
 	/**
-	Register an event handler
-	*/
+	 * Register an event handler
+	 */
 	RegisterEventHandler(eventName: string, context: Panel, callback: Function): void
 	/**
-	Register a handler for an event that is not otherwise handled
-	*/
+	 * Register a handler for an event that is not otherwise handled
+	 */
 	RegisterForUnhandledEvent(eventName: string, callback: Function)
 	/**
-	Remove an unhandled event handler
-	*/
+	 * Remove an unhandled event handler
+	 */
 	UnregisterForUnhandledEvent(eventNameUnconfirmYet: string)
 	/**
-	Find an element
-	*/
+	 * Find an element
+	 */
 	FindChildInContext(idSelector: string): Panel
 	/**
-	Make a web request
-	*/
+	 * Make a web request
+	 */
 	AsyncWebRequest(url: string, args:Object)
 	/**
-	Create a new panel
-	*/
+	 * Create a new panel
+	 */
 	CreatePanel(panelType:String, parent:Panel, id:String): Panel
 	/**
-	Localize a String
-	*/
+	 * Localize a String
+	 */
 	Localize(js_raw_args_1: js_raw_args): string
 	/**
-	Get the current language
-	*/
+	 * Get the current language
+	 */
 	Language(): string
 	/**
-	Schedule a function to be called later
-	*/
-	Schedule(delay: number, callback: Function): Function
+	 * Schedule a function to be called later
+	 */
+	Schedule(delay: number, callback: Function): number
 	/**
-	Cancelse a scheduled function
-	*/
-	CancelScheduled(previousSchedule: Function)
+	 * Cancelse a scheduled function
+	 */
+	CancelScheduled(scheduleID: number)
 	/**
-	Get the current panel context
-	*/
+	 * Get the current panel context
+	 */
 	GetContextPanel(): Panel
 	/**
-	Register a key binding
-	*/
+	 * Register a key binding
+	 */
 	RegisterKeyBind(context:Panel, keyName:String, callback:Function)
 	/**
-	Call a function on each given item
-	*/
+	 * Call a function on each given item
+	 */
 	Each(table:Object, callback:Function)
 
 }
